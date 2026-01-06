@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import {toast} from 'react-hot-toast'
 import { Mail, Eye, EyeOff } from "lucide-react";
 import { createUserApi } from '../services/api';
+import messi from "../assets/messi.jpeg"
+import futsal from "../assets/futsal.jpeg"
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -92,10 +94,21 @@ const Register = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-200 p-2">
-      <div className="flex max-w-4xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center p-2 relative">
+      {/* Background Image */}
+      <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(${futsal})`,
+            filter: 'blur(8px)',
+            transform: 'scale(1.1)'
+          }}
+      />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/40" />
+      <div className="flex max-w-4xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden relative z-10">
         {/* Left Side - Form */}
-        <div className="w-full md:w-1/2 p-6">
+        <div className="w-full md:w-1/2 p-6 bg-white">
           {/* Header */}
           <div className="mb-6">
             <h1 className="text-3xl font-bold text-gray-900 mb-1">
@@ -246,14 +259,12 @@ const Register = () => {
         </div>
 
         {/* Right Side */}
-        <div className="hidden md:flex w-1/2 bg-gray-900 items-center justify-center">
-          <svg
-            className="w-48 h-48 text-white opacity-90"
-            viewBox="0 0 200 200"
-            fill="currentColor"
-          >
-            <path d="M100 60 C 60 60, 40 80, 40 100 C 40 120, 60 140, 100 140 C 140 140, 160 120, 160 100 C 160 80, 140 60, 100 60 M 100 80 C 130 80, 140 90, 140 100 C 140 110, 130 120, 100 120 C 70 120, 60 110, 60 100 C 60 90, 70 80, 100 80" />
-          </svg>
+        <div className="hidden md:block w-1/2 relative overflow-hidden">
+          <img 
+            src={messi} 
+            alt="Futsal Court" 
+            className="absolute inset-0 w-full h-full  object-cover object-right"
+          />
         </div>
       </div>
     </div>
