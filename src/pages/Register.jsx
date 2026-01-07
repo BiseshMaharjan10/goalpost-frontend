@@ -4,8 +4,10 @@ import { Mail, Eye, EyeOff } from "lucide-react";
 import { createUserApi } from '../services/api';
 import messi from "../assets/messi.jpeg"
 import futsal from "../assets/futsal.jpeg"
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -251,7 +253,9 @@ const Register = () => {
             {/* Login */}
             <p className="text-center text-sm text-gray-600">
               Already have an account?{" "}
-              <span className="text-gray-900 font-semibold cursor-pointer hover:underline">
+              <span 
+              onClick={() => navigate("/login")}
+              className="text-gray-900 font-semibold cursor-pointer hover:underline">
                 Log in
               </span>
             </p>

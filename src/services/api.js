@@ -24,3 +24,5 @@ const config ={
 
 export const createUserApi = (data) => ApiFormData.post("/api/user/registerUser", data);
 
+export const login = (data) => Api.post("/api/user/loginUser", data)
+
