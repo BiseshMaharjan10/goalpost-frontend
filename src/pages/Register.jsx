@@ -216,13 +216,6 @@ const Register = () => {
               </div>
             </div>
 
-            {/* Forgot Password */}
-            <div className="text-right">
-              <span className="text-sm text-gray-900 font-semibold cursor-pointer hover:underline">
-                Forgot password?
-              </span>
-            </div>
-
             {/* Terms and Conditions */}
             <div className="flex items-start">
               <input

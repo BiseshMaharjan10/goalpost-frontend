@@ -15,7 +15,10 @@ function App() {
            <Route path="/" element={<Register/>} />
            <Route path="/login" element={<Login/>} />
            <Route path="/userdash" element={<IndDashboard/>} />
-           <Route path="/admindash" element={<AdminDashboard/>} />
+           <Route path="/admindash" element={
+            <ProtectedRoute allowedRoles={['admin']} element={<AdminDashboard/>}
+            />} 
+            />
       </Routes>
     </Router>
   )
