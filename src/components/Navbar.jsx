@@ -75,7 +75,6 @@ const Navbar = ({ pendingCount = 0 }) => {
     { name: 'Dashboard', icon: Grid, path: '/admindash', badge: null },
     { name: 'Pending Requests', icon: Clock, path: '/pending', badge: pendingCount || null },
     { name: 'Calendar', icon: Calendar, path: '/calendar', badge: null },
-    { name: 'All Bookings', icon: Calendar, path: '/admin/bookings', badge: null },
     { name: 'Users', icon: Users, path: '/admin/users', badge: null },
     { name: 'Settings', icon: Settings, path: '/admin/settings', badge: null },
   ];
