@@ -3,7 +3,14 @@ import {Toaster} from 'react-hot-toast';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import AdminDashboard from './pages/AdminDashboard';
-import IndDashboard from './pages/IndDashboard';
+import ProtectedRoute from './protected/ProtectedRoute';
+import Pending from './pages/Pending';
+import Calendar  from './pages/Calendar';
+import ForgetPass from './pages/ForgetPass';
+import Resetpass from './pages/ResetPass';
+import AdminUser from './pages/AdminUser';
+import Settings from './pages/Settings';
+import Dashboard from './pages/user/Dashboard';
 
 function App() {
  
@@ -14,10 +21,28 @@ function App() {
       <Routes>
            <Route path="/" element={<Register/>} />
            <Route path="/login" element={<Login/>} />
-           <Route path="/userdash" element={<IndDashboard/>} />
+           <Route path="/forgetpass" element={<ForgetPass/>} />
+           <Route path="/resetpass" element={<Resetpass/>} />
+           <Route path="/userdash" element={<Dashboard/>} />
            <Route path="/admindash" element={
             <ProtectedRoute allowedRoles={['admin']} element={<AdminDashboard/>}
             />} 
+            />
+            <Route path="/pending" element={
+            <ProtectedRoute allowedRoles={['admin']} element={<Pending/>}
+            />} 
+            />
+            <Route path="/calendar" element={
+            <ProtectedRoute allowedRoles={['admin']} element={<Calendar/>}
+            />} 
+            />
+               <Route path="/admin/users" element={
+            <ProtectedRoute allowedRoles={['admin']} element={<AdminUser/>}
+            />} 
+            />
+            <Route path="/admin/settings" element={
+            <ProtectedRoute allowedRoles={['admin']} element={<Settings />} 
+            />}
             />
       </Routes>
     </Router>

@@ -64,10 +64,12 @@ const Login = () => {
 
       // Navigate based on role
       if (decoded.role === 'admin') {
-        navigate("/admindash")
+        navigate("/admindash",{replace: true})
       } else {
-        navigate("/userdash")
+        navigate("/userdash",{replace: true})
       }
+      window.location.reload();
+
 
     } catch (error) {
       console.error(error)
@@ -162,7 +164,9 @@ const Login = () => {
                 Remember Me
                 </label>
             </div>
-            <span className="text-sm text-gray-900 font-semibold cursor-pointer hover:underline">
+            <span 
+            onClick={() => navigate("/forgetpass")}
+            className="text-sm text-gray-900 font-semibold cursor-pointer hover:underline">
                 Forgot password?
             </span>
             </div>
@@ -170,10 +174,22 @@ const Login = () => {
             {/* Button */}
             <button
               onClick={handleSubmit}
-              className="w-full bg-black text-white py-2.5 rounded-lg font-medium hover:bg-gray-800 transition"
+              className="group w-full bg-gradient-to-r from-gray-900 to-gray-800 text-white py-3.5 rounded-xl font-semibold hover:shadow-xl hover:scale-[1.02] transition-all duration-200 flex items-center justify-center gap-2"
             >
             Log In
             </button>
+
+                {/* Divider */}
+              <div className="relative my-6">
+                <div className="absolute inset-0 flex items-center">
+                  <div className="w-full border-t border-gray-200"></div>
+                </div>
+                <div className="relative flex justify-center text-sm">
+                  <span className="px-4 bg-gradient-to-br from-gray-50 to-white text-gray-500">
+                    or
+                  </span>
+                </div>
+              </div>
            
            
             {/* Sign Up Link */}
