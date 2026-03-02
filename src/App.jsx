@@ -11,6 +11,8 @@ import Resetpass from './pages/ResetPass';
 import AdminUser from './pages/AdminUser';
 import Settings from './pages/Settings';
 import Dashboard from './pages/user/Dashboard';
+import MyBookings from './pages/user/MyBookings';
+import CourtInfo from './pages/user/CourtInfo';
 
 function App() {
  
@@ -24,6 +26,8 @@ function App() {
            <Route path="/forgetpass" element={<ForgetPass/>} />
            <Route path="/resetpass" element={<Resetpass/>} />
            <Route path="/userdash" element={<Dashboard/>} />
+           <Route path="/my-bookings" element={<MyBookings/>} />
+           <Route path="/court-info" element={<CourtInfo/>} />
            <Route path="/admindash" element={
             <ProtectedRoute allowedRoles={['admin']} element={<AdminDashboard/>}
             />} 

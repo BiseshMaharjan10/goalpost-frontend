@@ -6,7 +6,7 @@ const UserNavbar = () => {
   const navigate = useNavigate();
 
   const navItems = [
-    { label: 'Book Court', icon: Calendar, path: '/book' },
+    { label: 'Book Court', icon: Calendar, path: '/userdash' },
     { label: 'My Bookings', icon: BookOpen, path: '/my-bookings' },
     { label: 'Court Info', icon: Info, path: '/court-info' },
   ];
