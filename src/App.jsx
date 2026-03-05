@@ -23,8 +23,8 @@ function App() {
       <Routes>
            <Route path="/" element={<Register/>} />
            <Route path="/login" element={<Login/>} />
-           <Route path="/forgetpass" element={<ForgetPass/>} />
-           <Route path="/resetpass" element={<Resetpass/>} />
+           <Route path="/forgot-password" element={<ForgetPass />} />
+          <Route path="/reset-password/:token" element={<Resetpass />} />
            <Route path="/userdash" element={<Dashboard/>} />
            <Route path="/my-bookings" element={<MyBookings/>} />
            <Route path="/court-info" element={<CourtInfo/>} />
